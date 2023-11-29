@@ -1,1 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Raleway:wght@100;400;700;800;900&display=swap");
+
+:root {
+  --primary-c: #0054fe;
+  --green-c: #088450;
+  --red-c: #840808;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  overflow-y: scroll;
+}
+body::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+body::-webkit-scrollbar-thumb {
+  background: var(--primary-c);
+}
+
+.container {
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}

@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "email": "sd.d@gmail.com",
+      "password": "asasasas",
+      "nickname": "as",
+      "phoneNumber": "+995345345335",
+      "balance": null,
+      "id": 1
+    },
+    {
+      "email": "fd",
+      "password": "fg",
+      "nickname": "fg",
+      "phoneNumber": "gf",
+      "balance": 0,
+      "id": 2
+    },
+    {
+      "email": "b",
+      "password": "",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 0,
+      "id": 3
+    },
+    {
+      "email": "",
+      "password": "",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 0,
+      "id": 4
+    },
+    {
+      "email": "a",
+      "password": "",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 0,
+      "id": 5
+    }
+  ]
+}
