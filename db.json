@@ -39,6 +39,30 @@
       "phoneNumber": "",
       "balance": 0,
       "id": 5
+    },
+    {
+      "email": "jj",
+      "password": "",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 0,
+      "id": 6
+    },
+    {
+      "email": "ii",
+      "password": "",
+      "nickname": "",
+      "phoneNumber": "",
+      "balance": 0,
+      "id": 7
+    },
+    {
+      "email": "sdf",
+      "password": "sdf",
+      "nickname": "sdf",
+      "phoneNumber": "sdf",
+      "balance": 0,
+      "id": 8
     }
   ]
 }

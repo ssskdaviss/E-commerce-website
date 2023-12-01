@@ -4,6 +4,7 @@ import { FormBuilder, FormControl, ReactiveFormsModule, ValidationErrors, Valida
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/core/interfaces/interfaces';
+import { catchError, of, tap } from 'rxjs';
 
 @Component({
   selector: 'app-registration',
@@ -15,7 +16,7 @@ import { User } from 'src/app/core/interfaces/interfaces';
 export class RegistrationComponent {
 
   signUpForm = this.fb.group({
-    email: ['', ],
+    email: ['',],
     password: ['',/* [Validators.required, this.englishValidator, Validators.minLength(8)],*/],
     nickname: ['', /*[Validators.required, this.englishValidator]*/],
     phoneNumber: ['', /*[Validators.required, this.phoneNumberValidator]*/],
@@ -44,8 +45,8 @@ export class RegistrationComponent {
     if (this.signUpForm.valid) {
       const userData = this.signUpForm.value;
 
-      this.http.get<User[]>('http://localhost:3000/users').subscribe(
-        (users: User[]) => {
+      this.http.get<User[]>('http://localhost:3000/users').pipe(
+        tap((users: User[]) => {
           //check if email already exists
           const emailExists = users.some(
             (user) => user.email === userData.email
@@ -61,11 +62,12 @@ export class RegistrationComponent {
             this.signUpForm.reset();
             this.router.navigate(['/login']);
           }
-        },
-        (error) => {
+        }),
+        catchError((error) => {
           console.error('Registration failed:', error);
-        }
-      );
+          return of(error);
+        })
+      ).subscribe();
     }
   }
 

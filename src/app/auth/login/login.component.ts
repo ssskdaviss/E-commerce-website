@@ -1,9 +1,10 @@
-import {  Component } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { User } from 'src/app/core/interfaces/interfaces';
+import { catchError, map, of } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ import { User } from 'src/app/core/interfaces/interfaces';
 export class LoginComponent {
   loginForm = this.fb.group({
     email: ['', /*[Validators.required]*/],
-  password: ['',/* [Validators.required]*/],
+    password: ['',/* [Validators.required]*/],
   });
 
   constructor(
@@ -33,12 +34,10 @@ export class LoginComponent {
   }
 
   public onSubmit(): void {
-    console.log("d");
-    
     if (this.loginForm.valid) {
       const loginData = this.loginForm.value;
-      this.http.get<User[]>('http://localhost:3000/users').subscribe(
-        (users: User[]) => {
+      this.http.get<User[]>('http://localhost:3000/users').pipe(
+        map((users: User[]) => {
           //check email and password
           const authenticatedUser = users.find(
             (user) =>
@@ -50,16 +49,16 @@ export class LoginComponent {
             localStorage.setItem('email', authenticatedUser.email);
             localStorage.setItem('password', authenticatedUser.password);
             localStorage.setItem('userId', authenticatedUser.id);
-            // this.cdr.markForCheck();
-            window.location.href = "/home"
+            this.router.navigate(['/home']);
           } else {
             alert('Login failed: Invalid credentials');
           }
-        },
-        (error) => {
+        }),
+        catchError((error) => {
           console.error('Login failed:', error);
-        }
-      );
+          return of(null);
+        })
+      ).subscribe();
     }
   }
 }

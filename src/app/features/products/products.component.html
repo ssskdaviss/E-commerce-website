@@ -1,0 +1,16 @@
+<h1>Product List</h1>
+<ul>
+  <ul>
+    <li *ngFor="let product of products">
+      <img
+        [src]="product.image"
+        alt="{{ product.title }}"
+        style="width: 100px; height: 100px"
+      />
+      <p>{{ product.title }}</p>
+      <p>{{ product.price}}$</p>
+      <p>{{ product.category }}</p>
+      <p>{{ product.description }}</p>
+    </li>
+  </ul>
+</ul>
