@@ -1,19 +1,54 @@
-<div class="home" >
-    <div class="container" >
+<div class="home">
+    <div class="container">
         <div class="description">
             <div class="desc-left">
                 <h1>Bright your daily life with our products!</h1>
                 <p>We have been providing our community with high-quality product</p>
                 <button>Get Started</button>
             </div>
-            <img src="../../../assets/images/shop.png">
+            <div class="slideshow">
+                <div class="slide" *ngFor="let image of images; index as i" [style.zIndex]="i === currentIndex ? 2 : 1"
+                    [style.opacity]="i === currentIndex ? 1 : 0"
+                    [style.transition]="'opacity ' + transitionDuration + 's'">
+                    <img [src]="image.url" alt="Slideshow image" />
+                </div>
+            </div>
         </div>
-        <div class="category-header"><h1>You can find the most popular categories!</h1></div>
+        <div class="category-header">
+            <h1>You can find the most popular categories!</h1>
+        </div>
         <div class="categories">
-            <div><p>women's clothing</p><img src="./../../../assets/images/clothing.png" ></div>
-            <div><p>jewelery</p><img src="./../../../assets/images/jewelery.png" ></div>
-            <div><p>electronics</p><img src="./../../../assets/images/electronics.png" ></div>
-            <div><p>men's clothing</p><img src="./../../../assets/images/clothing-2.png" ></div>
+            <div>
+                <p>women's clothing</p><img src="./../../../assets/images/clothing.png">
+            </div>
+            <div>
+                <p>jewelery</p><img src="./../../../assets/images/jewelery.png">
+            </div>
+            <div>
+                <p>electronics</p><img src="./../../../assets/images/electronics.png">
+            </div>
+            <div>
+                <p>men's clothing</p><img src="./../../../assets/images/clothing-2.png">
+            </div>
+        </div>
+        <div class="about-us"><h1>About us <i class="fa-solid fa-earth-americas"></i></h1></div>
+        <div class="about">
+            <div>
+                <h2>Responsive Design</h2>
+                <p>Our Angular-based e-commerce platform ensures a responsive and adaptive layout, allowing users to
+                    seamlessly navigate and make purchases across various devices, from desktops to smartphone</p>
+            </div>
+            <div>
+                <h2>Intuitive User Interface</h2>
+                <p> We prioritize user experience, offering an intuitive and visually appealing interface. Streamlined
+                    navigation, a user-friendly checkout process contribute to a
+                    hassle-free shopping journey.</p>
+            </div>
+            <div>
+                <h2>Product Display</h2>
+                <p>Showcase your products in style with Angular's dynamic data binding capabilities. Enjoy real-time
+                    updates and a visually engaging presentation of product details, prices, and availability.</p>
+            </div>
         </div>
     </div>
 </div>
