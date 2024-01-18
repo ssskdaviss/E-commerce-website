@@ -1,77 +1,75 @@
 .register-cont {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 70px);
-    overflow: hidden;
-    margin: 0;
-  
-    .register {
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      width: 320px;
-      text-align: center;
-      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-      i {
-        font-size: 48px;
-        color: var(--primary-c);
-      }
-  
-      h1 {
-        font-size: 24px;
-        margin: 20px 0;
-      }
-  
-      label {
-        display: block;
-        text-align: left;
-        margin: 10px 0;
-  
-        input {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid var(--primary-c);
-          border-radius: 4px;
-          font-size: 16px;
-        }
-  
-        div {
-          color: #ff0000;
-          font-size: 14px;
-          margin-top: 4px;
-        }
-      }
-  
-      .submit {
-        background-color: var(--primary-c);
-        color: #fff;
-        border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 70px);
+  overflow: hidden;
+  margin: 0;
+  .register {
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    i {
+      font-size: 48px;
+      color: var(--primary-c);
+    }
+
+    h1 {
+      font-size: 24px;
+      margin: 20px 0;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0;
+
+      input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid var(--primary-c);
         border-radius: 4px;
-        padding: 10px 20px;
         font-size: 16px;
-        margin-top: 20px;
-        cursor: pointer;
-  
-        &:disabled {
-          background-color: #ccc;
-          cursor: not-allowed;
-        }
       }
-  
-      .reset {
-        background-color: var(--red-c);
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        padding: 10px 20px;
-        font-size: 16px;
-        margin-top: 20px;
-        cursor: pointer;
-        margin-left: 5px;
+
+      div {
+        color: #ff0000;
+        font-size: 14px;
+        margin-top: 4px;
       }
     }
+
+    .submit {
+      background-color: var(--primary-c);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+
+      &:disabled {
+        background-color: #ccc;
+        cursor: not-allowed;
+      }
+    }
+
+    .reset {
+      background-color: var(--red-c);
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+      margin-left: 5px;
+    }
   }
-  
+}

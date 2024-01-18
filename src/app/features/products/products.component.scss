@@ -1,38 +1,65 @@
-// Define a color palette
-$primary-color: #3498db; // Blue
-$secondary-color: #2ecc71; // Green
-$text-color: #333; // Dark Gray
-$background-color: #ecf0f1; // Light Gray
+.products {
+  background-color: var(--primary-c);
+  padding: 20px;
 
-// Apply styles to the product list
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  background-color: $background-color;
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  h1 {
+    text-align: center;
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
 
   li {
-    border: 1px solid $primary-color;
+    flex: 0 0 calc(25% - 20px);
     margin: 10px;
     padding: 15px;
-    border-radius: 5px;
-    background-color: #fff;
+    background-color: var(--red-c);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
 
-    img {
-      display: block;
-      margin: 0 auto;
-      border: 2px solid $secondary-color;
-      border-radius: 50%;
-    }
-
-    p {
-      margin: 10px 0;
-      color: $text-color;
-    }
-
-    // Add hover effect
     &:hover {
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      transform: scale(1.05);
+    }
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+
+  p {
+    margin: 10px 0;
+    color: #fff; // Adjust text color for better contrast
+  }
+
+  button {
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #1f5b93; // Change hover color for better visibility
     }
   }
 }
