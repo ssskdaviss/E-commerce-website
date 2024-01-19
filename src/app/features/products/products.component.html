@@ -1,3 +1,4 @@
+<!-- products.component.html -->
 <div class="products">
   <div class="container">
     <h1>Product List</h1>
@@ -5,8 +6,8 @@
       <li *ngFor="let product of products">
         <img [src]="product.image" alt="{{ product.title }}" />
         <p>{{ product.title }}</p>
-        <p>{{ product.price }}$</p>
-        <button>See Details</button>
+        <p class="price">{{ product.price }}$</p>
+        <a [routerLink]="['/product', product.id]">See Details</a>
       </li>
     </ul>
   </div>

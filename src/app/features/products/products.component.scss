@@ -9,7 +9,7 @@
 
   h1 {
     text-align: center;
-    color: #333;
+    color: #ffffff;
     font-size: 2em;
     margin-bottom: 20px;
   }
@@ -32,34 +32,42 @@
     border-radius: 10px;
     text-align: center;
     transition: transform 0.3s ease;
+    border: rgb(81, 81, 81) 1px solid;
+    display: flex;
+    align-items: center;
+    flex-direction: column; 
 
+    .price{
+      color: green;
+    }
     &:hover {
       transform: scale(1.05);
     }
   }
 
   img {
-    max-width: 100%;
-    height: auto;
+    max-width: 60%;
+    height: 50%;
     border-radius: 10px;
   }
 
   p {
     margin: 10px 0;
-    color: #fff; // Adjust text color for better contrast
+    color: var(--orange-c);
+    
   }
 
   button {
-    background-color: #3498db;
-    color: #fff;
-    border: none;
+    background-color: var(--primary-c);
+    color: var(--orange-c);
+    border: solid rgb(83, 83, 83) 1px;
     padding: 8px 16px;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-
+    margin-top: auto;
     &:hover {
-      background-color: #1f5b93; // Change hover color for better visibility
+      background-color: #1f5b93; 
     }
   }
 }
