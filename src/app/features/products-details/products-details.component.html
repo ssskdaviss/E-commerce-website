@@ -1,6 +1,18 @@
-<div class="product-detail" *ngIf="product">
+
+<div class="products-detail">
+  <div class="container">
+ 
+  <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page">
+    Back to Products
+  </a>
+  <div class="single-product" *ngIf="product">
     <img [src]="product.image" alt="{{ product.title }}" />
     <h2>{{ product.title }}</h2>
+    <p class="category">{{ product.category }}</p>
+    <p class="desc">{{ product.description }}</p>
     <p class="price">{{ product.price }}$</p>
+    <p class="rate">Rating: {{ product.rating.rate }}</p>
   </div>
-  
+</div>
+
+</div>

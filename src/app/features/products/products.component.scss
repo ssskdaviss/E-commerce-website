@@ -57,7 +57,7 @@
     
   }
 
-  button {
+  a {
     background-color: var(--primary-c);
     color: var(--orange-c);
     border: solid rgb(83, 83, 83) 1px;
@@ -66,6 +66,7 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: auto;
+    text-decoration: none;
     &:hover {
       background-color: #1f5b93; 
     }
