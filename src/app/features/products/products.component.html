@@ -1,15 +1,20 @@
-
 <div class="products">
-  <div class="categories">
-    <select [(ngModel)]="selectedCategory" (change)="filterByCategory($event.target)">
-      <option value="">All Categories</option>
-      <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
-    </select>
+  <div class="filter">
+    <div class="search container">
+      <input type="text" placeholder="Search products..." [(ngModel)]="searchQuery" (input)="searchProducts()">
+    </div>
+    <h1>Product List</h1>
+
+    <div class="categories container">
+      <select [(ngModel)]="selectedCategory" (change)="filterByCategory($event.target)">
+        <option value="">All Categories</option>
+        <option *ngFor="let category of categories" [value]="category">{{ category }}</option>
+      </select>
+    </div>
   </div>
   <div class="container">
-    <h1>Product List</h1>
     <ul>
-      <li *ngFor="let product of products">
+      <li *ngFor="let product of filteredProducts">
         <img [src]="product.image" alt="{{ product.title }}" />
         <p>{{ product.title }}</p>
         <p class="price">{{ product.price }}$</p>

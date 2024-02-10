@@ -18,40 +18,49 @@ export class ProductsComponent implements OnInit {
   products: any[] = [];
   categories: string[] = categories;
   selectedCategory: string = '';
+  searchQuery: string = '';
+  filteredProducts: any[] = [];
 
   constructor(private productService: ProductService) { }
 
   ngOnInit() {
-    this.loadProducts();
-  }
+    this.loadAllProducts();
 
-  loadProducts() {
-    if (this.selectedCategory) {
-      this.productService.getProductsByCategory(this.selectedCategory).subscribe(
-        (data) => {
-          this.products = data;
-        },
-        (error) => {
-          console.error('Error fetching products:', error);
-        }
-      );
-    } else {
-      this.productService.getProducts().subscribe(
-        (data) => {
-          this.products = data;
-        },
-        (error) => {
-          console.error('Error fetching products:', error);
-        }
-      );
-    }
   }
-
+  loadAllProducts() {
+    this.productService.getProducts().subscribe(
+      (data) => {
+        this.products = data;
+        this.applyFilters();
+      },
+      (error) => {
+        console.error('Error fetching products:', error);
+      }
+    );
+  }
+ 
   filterByCategory(target: EventTarget | null) {
     if (target instanceof HTMLSelectElement) {
       const category = (target as HTMLSelectElement).value;
       this.selectedCategory = category;
-      this.loadProducts();
+      this.loadAllProducts();
     }
+  }
+  searchProducts() {
+    this.applyFilters();
+  }
+  
+  applyFilters() {
+    this.filteredProducts = this.products.filter(product => {
+      // Filter by category
+      if (this.selectedCategory && product.category !== this.selectedCategory) {
+        return false;
+      }
+      // Filter by search query
+      if (this.searchQuery && !product.title.toLowerCase().includes(this.searchQuery.toLowerCase())) {
+        return false;
+      }
+      return true;
+    });
   }
 }

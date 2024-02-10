@@ -1,6 +1,47 @@
 .products {
   background-color: var(--primary-c);
   padding: 20px;
+  min-height: 100vh;
+  .filter {
+    display: flex;
+    .search {
+      margin-bottom: 20px;
+    }
+
+    .search input[type="text"] {
+      padding: 10px;
+      font-size: 16px;
+      border: var(--orange-c) 1px solid;
+      border-radius: 5px;
+      background-color: var(--red-c);
+      color: var(--orange-c);
+      transition: border-color 0.3s ease;
+    }
+
+    .search input[type="text"]:focus {
+      border-color: var(--primary-c);
+    }
+
+    .categories select {
+      padding: 10px;
+      font-size: 16px;
+      border: var(--orange-c) 1px solid;
+      border-radius: 5px;
+      background-color: var(--red-c);
+      color: var(--orange-c);
+      transition: border-color 0.3s ease;
+    }
+
+    .categories select option {
+      color: var(--orange-c);
+      background-color: var(--red-c);
+    }
+
+    .categories select option:hover {
+      background-color: var(--orange-c);
+      color: #fff;
+    }
+  }
 
   .container {
     max-width: 1200px;
@@ -20,7 +61,6 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
   }
 
   li {
@@ -35,9 +75,9 @@
     border: rgb(81, 81, 81) 1px solid;
     display: flex;
     align-items: center;
-    flex-direction: column; 
+    flex-direction: column;
 
-    .price{
+    .price {
       color: green;
     }
     &:hover {
@@ -48,14 +88,12 @@
   img {
     max-width: 60%;
     height: 50%;
-    border-radius: 10px; 
-
+    border-radius: 10px;
   }
 
   p {
     margin: 10px 0;
     color: var(--orange-c);
-    
   }
 
   a {
@@ -69,7 +107,7 @@
     margin-top: auto;
     text-decoration: none;
     &:hover {
-      background-color: #1f5b93; 
+      background-color: #1f5b93;
     }
   }
 }
