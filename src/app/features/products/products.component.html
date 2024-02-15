@@ -18,7 +18,10 @@
         <img [src]="product.image" alt="{{ product.title }}" />
         <p>{{ product.title }}</p>
         <p class="price">{{ product.price }}$</p>
-        <a [routerLink]="['/product', product.id]">See Details</a>
+        <div class="action">
+          <a [routerLink]="['/product', product.id]">See Details</a>
+          <button>Buy </button>
+        </div>
       </li>
     </ul>
   </div>

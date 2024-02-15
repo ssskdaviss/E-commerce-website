@@ -21,6 +21,12 @@ export class RegistrationComponent {
     nickname: ['', /*[Validators.required, this.englishValidator]*/],
     phoneNumber: ['', /*[Validators.required, this.phoneNumberValidator]*/],
     balance: 0,
+    cardInfo: {
+      cardNumber: '',
+      expirationDate: '',
+      cvc: '',
+    },
+    products:[[]]
   },
     {
       validators: [],

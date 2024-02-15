@@ -63,6 +63,28 @@
       "phoneNumber": "sdf",
       "balance": 0,
       "id": 8
+    },
+    {
+      "email": "sdfsddd",
+      "password": "d",
+      "nickname": "d",
+      "phoneNumber": "d",
+      "balance": 0,
+      "id": 9
+    },
+    {
+      "email": "h",
+      "password": "h",
+      "nickname": "h",
+      "phoneNumber": "h",
+      "balance": 0,
+      "cardInfo": {
+        "cardNumber": "",
+        "expirationDate": "",
+        "cvc": ""
+      },
+      "products": [],
+      "id": 10
     }
   ]
 }

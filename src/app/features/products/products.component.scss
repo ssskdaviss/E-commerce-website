@@ -96,18 +96,38 @@
     color: var(--orange-c);
   }
 
-  a {
-    background-color: var(--primary-c);
-    color: var(--orange-c);
-    border: solid rgb(83, 83, 83) 1px;
-    padding: 8px 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .action {
     margin-top: auto;
-    text-decoration: none;
-    &:hover {
-      background-color: #1f5b93;
+    display: flex;
+    a {
+      background-color: var(--primary-c);
+      color: var(--orange-c);
+      border: solid rgb(83, 83, 83) 1px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      margin: 2px;
+      &:hover {
+        background-color: #1f5b93;
+      }
+    }
+    button {
+      background-color: var(--primary-c);
+      color: green;
+      border: solid green 1px;
+      padding: 8px 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      margin: 2px;
+      font-weight: 600;
+      &:hover {
+        background-color: green;
+        color: black;
+      }
     }
   }
 }
