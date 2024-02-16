@@ -3,7 +3,7 @@
     <div class="search container">
       <input type="text" placeholder="Search products..." [(ngModel)]="searchQuery" (input)="searchProducts()">
     </div>
-    <h1>Product List</h1>
+    <h1>Product List <i class="fa-solid fa-shop"></i></h1>
 
     <div class="categories container">
       <select [(ngModel)]="selectedCategory" (change)="filterByCategory($event.target)">
@@ -17,10 +17,12 @@
       <li *ngFor="let product of filteredProducts">
         <img [src]="product.image" alt="{{ product.title }}" />
         <p>{{ product.title }}</p>
-        <p class="price">{{ product.price }}$</p>
-        <div class="action">
-          <a [routerLink]="['/product', product.id]">See Details</a>
-          <button>Buy </button>
+        <div class="bottom">
+          <p class="price">{{ product.price }}$</p>
+          <div class="action">
+            <a [routerLink]="['/product', product.id]">See Details</a>
+            <button>Buy <i class="fa-solid fa-cart-shopping"></i></button>
+          </div>
         </div>
       </li>
     </ul>

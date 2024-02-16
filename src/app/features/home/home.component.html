@@ -4,7 +4,7 @@
             <div class="desc-left">
                 <h1>Bright your daily life with our products!</h1>
                 <p>We have been providing our community with high-quality product</p>
-                <button>Get Started</button>
+                <a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Get Started</a>
             </div>
             <div class="slideshow">
                 <div class="slide" *ngFor="let image of images; index as i" [style.zIndex]="i === currentIndex ? 2 : 1"

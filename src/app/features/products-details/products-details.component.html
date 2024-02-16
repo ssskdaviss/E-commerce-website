@@ -1,18 +1,20 @@
-
 <div class="products-detail">
   <div class="container">
- 
-  <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page">
-    Back to Products
-  </a>
-  <div class="single-product" *ngIf="product">
-    <img [src]="product.image" alt="{{ product.title }}" />
-    <h2>{{ product.title }}</h2>
-    <p class="category">{{ product.category }}</p>
-    <p class="desc">{{ product.description }}</p>
-    <p class="price">{{ product.price }}$</p>
-    <p class="rate">Rating: {{ product.rating.rate }}</p>
+
+    <a routerLink="/products" routerLinkActive="active" ariaCurrentWhenActive="page">
+      <i class="fa-solid fa-backward"></i> Back to Products
+    </a>
+    <div class="single-product" *ngIf="product">
+      <img [src]="product.image" alt="{{ product.title }}" />
+      <div class="desc">
+        <h1>{{ product.title }}</h1>
+        <p class="category">{{ product.category }}</p>
+        <p class="description">Description: {{ product.description }}</p>
+        <p class="rate">Rating: {{ product.rating.rate }} <i class="fa-regular fa-star"></i></p>
+        <p class="price">Price: {{ product.price }} $</p>
+        <button>Buy Item</button>
+      </div>
+    </div>
   </div>
-</div>
 
 </div>

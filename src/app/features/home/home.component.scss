@@ -21,7 +21,7 @@
           padding-bottom: 30px;
         }
 
-        button {
+        a {
           padding: 10px 20px;
           background-color: var(--orange-c);
           color: var(--red-c);
@@ -30,6 +30,7 @@
           border-radius: 5px;
           cursor: pointer;
           font-size: 1.2em;
+          text-decoration: none;
         }
       }
     }
@@ -37,8 +38,8 @@
     .slideshow {
       margin-top: 20px;
       position: relative;
-      width: 100%; 
-      height: 400px; 
+      width: 100%;
+      height: 400px;
       overflow: hidden;
     }
 
@@ -105,23 +106,23 @@
         padding: 20px;
       }
     }
-    .about-us{
+    .about-us {
       display: flex;
       align-items: center;
       justify-content: center;
-      h1{
+      h1 {
         color: white;
       }
     }
-    .about{
+    .about {
       display: flex;
       justify-content: space-around;
       align-items: center;
-      margin-top:20px;
+      margin-top: 20px;
       padding-bottom: 50px;
       flex-wrap: wrap;
       div {
-        background-color:  var(--red-c);
+        background-color: var(--red-c);
         border: #2d3143 solid 1px;
         border-radius: 10px;
         padding-left: 40px;
@@ -131,17 +132,17 @@
         align-items: center;
         flex-direction: column;
         margin-bottom: 20px;
-    
+
         &:hover {
           transform: scale(1.05);
         }
-    
+
         h2 {
           color: var(--orange-c);
           font-size: 1.8em;
           margin-bottom: 10px;
         }
-    
+
         p {
           color: white;
           font-size: 1em;
@@ -150,7 +151,6 @@
         }
       }
     }
-    
   }
 }
 
